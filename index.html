@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section>
+    <div class="logo">Creative</div>
+<img src="./bg.jpg" class="creative"/>
+<div class="content">
+    <h2> Lets Make <br>Some thing creative</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <a href="#">Get Started</a>
+</div>
+</section>
+<nav>
+    <div class="toggle">
+        <div class="line"></div>
+
+
+    </div>
+    <div class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+
+    </div>
+    <div class="social-bar">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+    </div>
+</nav>
+<script>
+    const toggle = document.querySelector('.toggle');
+    const navlinks = document.querySelector('.nav-links')
+    const allLinks = document.querySelectorAll('.nav-links li');
+
+    toggle.addEventListener('click',()=>{
+        toggle.classList.toggle('active');
+        navlinks.classList.toggle('open')
+        allLinks.forEach((item,index)=>{
+            if(item.style.animation){
+                item.style.animation=''
+            }else{
+                item.style.animation=`navLinksFade 1s ease forwards ${index/7+0.3}s`
+
+            }
+        })
+    })
+    </script>
+</body>
+</html>
